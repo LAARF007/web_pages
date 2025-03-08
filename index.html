@@ -1,7 +1,7 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mes Produits à Vendre</title>
+    <title>Modern Online Store</title>
     <style>
         * {
             margin: 0;
@@ -9,187 +9,212 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
-            background: linear-gradient(145deg, #f9f9f9, #e8f0fe);
+            background-color: #f4f4f4;
             color: #333;
         }
-
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: #007bff;
-            color: white;
+            background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         header .logo {
-            font-size: 1.5em;
+            font-size: 2em;
             font-weight: bold;
+            color: #FF4500;
         }
-
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: white;
+            color: #333;
+            font-weight: 500;
             transition: color 0.3s;
         }
-
         nav a:hover {
-            color: #d1e9ff;
+            color: #FF4500;
         }
-
         .hero {
-            height: 60vh;
+            height: 90vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom right, rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.8)), url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
-
         .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-        }
-
-        .product-section {
-            padding: 60px 50px;
-            background: linear-gradient(145deg, #ffffff, #f0f4ff);
-        }
-
-        .product-section h2 {
-            text-align: center;
+            font-size: 3.5em;
             margin-bottom: 20px;
         }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            max-width: 600px;
         }
-
+        .hero a {
+            padding: 15px 40px;
+            background-color: #FF4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+        .hero a:hover {
+            background-color: #ff2500;
+        }
+        .section {
+            padding: 60px 50px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
         .product-item {
-            background: white;
+            width: 300px;
+            background: #fff;
+            padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         .product-item img {
             width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 10px;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .product-item h3 {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        .product-item p {
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-
-        .product-item .price {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-
-        .product-item button {
-            padding: 10px 20px;
-            background: #007bff;
-            color: white;
-            border: none;
+            height: 200px;
+            object-fit: cover;
             border-radius: 5px;
-            cursor: pointer;
+        }
+        .product-item h3 {
+            margin: 20px 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .product-item p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        .product-item a {
+            padding: 10px 25px;
+            background-color: #FF4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             transition: background 0.3s;
         }
-
-        .product-item button:hover {
-            background: #0056b3;
+        .product-item a:hover {
+            background-color: #ff2500;
         }
-
-        footer {
+        .promo {
+            text-align: center;
+            background: #FF4500;
+            color: white;
+            padding: 50px;
+            margin: 40px 0;
+        }
+        .promo h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .promo p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .promo a {
+            padding: 15px 40px;
+            background-color: #fff;
+            color: #FF4500;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .promo a:hover {
+            background-color: #f4f4f4;
+        }
+        .footer {
             padding: 20px;
             background: #333;
             color: white;
             text-align: center;
         }
-
-        footer p {
-            margin: 0;
-        }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">Mes Produits</div>
-        <nav>
-            <a href="#products">Produits</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">ShopModern</div>
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#promo">Promotions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section class="hero element-highlight" data-element-type="SECTION">
-        <div>
-            <h1>Bienvenue sur notre Boutique</h1>
-            <p>Découvrez nos produits incroyables à des prix avantageux</p>
-        </div>
-    </section>
+<section class="hero" data-element-type="SECTION">
+    <h1 class="element-highlight" data-element-type="H1">Welcome to ShopModern</h1>
+    <p class="" data-element-type="P">Discover the latest trends and exclusive deals on our modern online store.</p>
+    <a href="#products">Shop Now</a>
+</section>
 
-    <section class="product-section" id="products">
-        <h2>Nos Produits</h2>
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="https://via.placeholder.com/250x200" alt="Produit 1" />
-                <h3>Produit 1</h3>
-                <p>Une brève description de Produit 1</p>
-                <div class="price">20€</div>
-                <button>Ajouter au Panier</button>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/250x200" alt="Produit 2" />
-                <h3>Produit 2</h3>
-                <p>Une brève description de Produit 2</p>
-                <div class="price">30€</div>
-                <button>Ajouter au Panier</button>
-            </div>
-            <div class="product-item">
-                <img src="https://via.placeholder.com/250x200" alt="Produit 3" />
-                <h3>Produit 3</h3>
-                <p>Une brève description de Produit 3</p>
-                <div class="price">15€</div>
-                <button>Ajouter au Panier</button>
-            </div>
-        </div>
-    </section>
+<section class="section products" id="products">
+    <div class="product-item">
+        <img src="https://via.placeholder.com/300x200" alt="Product 1" />
+        <h3>Stylish Chair</h3>
+        <p>Perfect for your workspace or home. Modern and comfortable.</p>
+        <a href="#buy" class="" data-element-type="A">Buy Now</a>
+    </div>
+    <div class="product-item">
+        <img src="https://via.placeholder.com/300x200" alt="Product 2" />
+        <h3>Smart Watch</h3>
+        <p>Track your daily activities with style and precision.</p>
+        <a href="#buy">Buy Now</a>
+    </div>
+    <div class="product-item">
+        <img src="https://via.placeholder.com/300x200" alt="Product 3" />
+        <h3>Wireless Headphones</h3>
+        <p>Immerse yourself in quality sound wherever you go.</p>
+        <a href="#buy">Buy Now</a>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2025 Mes Produits. Tous droits réservés.</p>
-    </footer>
+<section class="promo" id="promo">
+    <h2>Limited-Time Offer!</h2>
+    <p>Save up to 50% on selected items. Don't miss out!</p>
+    <a href="#products">Explore Deals</a>
+</section>
 
+<section class="section contact" id="contact">
+    <div>
+        <h2>Contact Us</h2>
+        <p>Email: support@shopmodern.com</p>
+        <p>Phone: +123 456 789</p>
+    </div>
+    <form>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required="" /><br /><br />
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required="" /><br /><br />
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer class="footer">
+    <p>© 2025 ShopModern. All rights reserved.</p>
+</footer>
 
 
 </body></html>
