@@ -1,7 +1,7 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Online Store</title>
+    <title>Agence Landing Page</title>
     <style>
         * {
             margin: 0;
@@ -10,210 +10,156 @@
             font-family: 'Poppins', sans-serif;
         }
         body {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #000; /* Fond noir */
+            color: #fff; /* Texte blanc */
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #111; /* En-tête noir */
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Ombre blanche */
         }
         header .logo {
-            font-size: 2em;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #FF4500;
+            color: #fff; /* Couleur logo blanc */
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
+            color: #fff; /* Liens blancs */
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #FF4500;
+            color: #FFA500; /* Couleur survol des liens orange */
         }
         .hero {
-            height: 90vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
-            color: white;
+            color: white; /* Texte héro blanc */
             text-align: center;
         }
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin-bottom: 30px;
-            max-width: 600px;
         }
         .hero a {
-            padding: 15px 40px;
-            background-color: #FF4500;
-            color: white;
+            padding: 15px 30px;
+            background-color: #FFA500; /* Bouton orange */
+            color: white; /* Texte bouton blanc */
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1.2em;
             transition: background 0.3s;
         }
         .hero a:hover {
-            background-color: #ff2500;
+            background-color: #FF8C00; /* Couleur bouton survol orange foncé */
         }
         .section {
             padding: 60px 50px;
         }
-        .products {
+        .services, .contact {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            justify-content: space-between;
         }
-        .product-item {
-            width: 300px;
-            background: #fff;
+        .service-item {
+            width: 30%;
+            background: #222; /* Fond des services noir foncé */
             padding: 20px;
-            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Ombre blanche */
             border-radius: 8px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .product-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .product-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .product-item h3 {
-            margin: 20px 0 10px;
-            font-size: 1.5em;
-            color: #333;
-        }
-        .product-item p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-        .product-item a {
-            padding: 10px 25px;
-            background-color: #FF4500;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .product-item a:hover {
-            background-color: #ff2500;
-        }
-        .promo {
-            text-align: center;
-            background: #FF4500;
-            color: white;
-            padding: 50px;
-            margin: 40px 0;
-        }
-        .promo h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .promo p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        .promo a {
-            padding: 15px 40px;
-            background-color: #fff;
-            color: #FF4500;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .promo a:hover {
-            background-color: #f4f4f4;
+            color: #fff; /* Texte des services blanc */
         }
         .footer {
             padding: 20px;
-            background: #333;
-            color: white;
+            background: #111; /* Fond pied de page noir */
+            color: white; /* Texte pied de page blanc */
             text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #fff; /* Bordure blanche */
+            border-radius: 5px;
+            background-color: #222; /* Fond des champs formulaire noir foncé */
+            color: #fff; /* Texte des champs blanc */
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #FFA500; /* Bouton orange */
+            color: white; /* Texte bouton blanc */
+            border: none; /* Pas de bordure */
+            border-radius: 5px;
+            cursor: pointer; /* Curseur pointeur */
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #FF8C00; /* Couleur bouton survol orange foncé */
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">ShopModern</div>
+    <div class="logo">MyAgency</div>
     <nav>
-        <a href="#products">Products</a>
-        <a href="#promo">Promotions</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<section class="hero" data-element-type="SECTION">
-    <h1 class="element-highlight" data-element-type="H1">Welcome to ShopModern</h1>
-    <p class="" data-element-type="P">Discover the latest trends and exclusive deals on our modern online store.</p>
-    <a href="#products">Shop Now</a>
+<section class="hero">
+    <h1>Welcome to MyAgency</h1>
+    <p>We help businesses grow with modern digital solutions.</p>
+    <a href="#contact">Get in Touch</a>
 </section>
 
-<section class="section products" id="products">
-    <div class="product-item">
-        <img src="https://via.placeholder.com/300x200" alt="Product 1" />
-        <h3>Stylish Chair</h3>
-        <p>Perfect for your workspace or home. Modern and comfortable.</p>
-        <a href="#buy" class="" data-element-type="A">Buy Now</a>
+<section class="section services" id="services">
+    <div class="service-item">
+        <h3>Web Development</h3>
+        <p>Create modern and responsive websites tailored to your needs.</p>
     </div>
-    <div class="product-item">
-        <img src="https://via.placeholder.com/300x200" alt="Product 2" />
-        <h3>Smart Watch</h3>
-        <p>Track your daily activities with style and precision.</p>
-        <a href="#buy">Buy Now</a>
+    <div class="service-item">
+        <h3>SEO Optimization</h3>
+        <p>Improve your website’s visibility and attract more customers.</p>
     </div>
-    <div class="product-item">
-        <img src="https://via.placeholder.com/300x200" alt="Product 3" />
-        <h3>Wireless Headphones</h3>
-        <p>Immerse yourself in quality sound wherever you go.</p>
-        <a href="#buy">Buy Now</a>
+    <div class="service-item">
+        <h3>Digital Marketing</h3>
+        <p>Boost your online presence with targeted strategies.</p>
     </div>
-</section>
-
-<section class="promo" id="promo">
-    <h2>Limited-Time Offer!</h2>
-    <p>Save up to 50% on selected items. Don't miss out!</p>
-    <a href="#products">Explore Deals</a>
 </section>
 
 <section class="section contact" id="contact">
     <div>
         <h2>Contact Us</h2>
-        <p>Email: support@shopmodern.com</p>
+        <p>Email: contact@myagency.com</p>
         <p>Phone: +123 456 789</p>
     </div>
     <form>
         <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" required="" /><br /><br />
+        <input type="text" id="name" name="name" required="" /><br />
         <label for="email">Email</label><br />
-        <input type="email" id="email" name="email" required="" /><br /><br />
+        <input type="email" id="email" name="email" required="" /><br />
         <label for="message">Message</label><br />
-        <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
+        <textarea id="message" name="message" rows="5" required=""></textarea><br />
         <button type="submit">Send Message</button>
     </form>
 </section>
 
 <footer class="footer">
-    <p>© 2025 ShopModern. All rights reserved.</p>
+    <p>© 2025 MyAgency. All rights reserved.</p>
 </footer>
 
 
