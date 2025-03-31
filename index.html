@@ -9,32 +9,44 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
-            background-color: #000; /* Fond noir */
-            color: #fff; /* Texte blanc */
+            background-color: #f4f4f4;
+            color: #333;
         }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: #111; /* En-tête noir */
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Ombre blanche */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         header .logo {
             font-size: 1.5em;
             font-weight: bold;
-            color: #fff; /* Couleur logo blanc */
+            color: #007BFF;
+            transition: transform 0.3s;
         }
+
+        header .logo:hover {
+            transform: scale(1.1);
+        }
+
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #fff; /* Liens blancs */
-            transition: color 0.3s;
+            color: #333;
+            transition: color 0.3s, transform 0.3s;
         }
+
         nav a:hover {
-            color: #FFA500; /* Couleur survol des liens orange */
+            color: orange; /* Changement de couleur au survol */
+            transform: translateY(-2px); /* Animation de levage */
         }
+
         .hero {
             height: 100vh;
             display: flex;
@@ -42,125 +54,135 @@
             justify-content: center;
             align-items: center;
             background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
-            color: white; /* Texte héro blanc */
+            color: white;
             text-align: center;
         }
+
         .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            animation: fadeInUp 1s; /* Animation d'apparition */
         }
+
         .hero p {
             font-size: 1.2em;
             margin-bottom: 30px;
+            animation: fadeInUp 1.2s; /* Animation d'apparition */
         }
+
         .hero a {
             padding: 15px 30px;
-            background-color: #FFA500; /* Bouton orange */
-            color: white; /* Texte bouton blanc */
+            background-color: #007BFF;
+            color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
+            animation: fadeInUp 1.4s; /* Animation d'apparition */
         }
+
         .hero a:hover {
-            background-color: #FF8C00; /* Couleur bouton survol orange foncé */
+            background-color: orange; /* Changement de couleur au survol */
         }
+
         .section {
             padding: 60px 50px;
         }
-        .services, .contact {
+
+        .services,
+        .contact {
             display: flex;
             justify-content: space-between;
         }
+
         .service-item {
             width: 30%;
-            background: #222; /* Fond des services noir foncé */
+            background: #fff;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Ombre blanche */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            color: #fff; /* Texte des services blanc */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
+        .service-item:hover {
+            transform: translateY(-5px); /* Animation de levage */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .footer {
             padding: 20px;
-            background: #111; /* Fond pied de page noir */
-            color: white; /* Texte pied de page blanc */
+            background: #333;
+            color: white;
             text-align: center;
         }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #fff; /* Bordure blanche */
-            border-radius: 5px;
-            background-color: #222; /* Fond des champs formulaire noir foncé */
-            color: #fff; /* Texte des champs blanc */
-        }
-        button {
-            padding: 15px 30px;
-            background-color: #FFA500; /* Bouton orange */
-            color: white; /* Texte bouton blanc */
-            border: none; /* Pas de bordure */
-            border-radius: 5px;
-            cursor: pointer; /* Curseur pointeur */
-            transition: background 0.3s;
-        }
-        button:hover {
-            background-color: #FF8C00; /* Couleur bouton survol orange foncé */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="logo">MyAgency</div>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">MyAgency</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<section class="hero">
-    <h1>Welcome to MyAgency</h1>
-    <p>We help businesses grow with modern digital solutions.</p>
-    <a href="#contact">Get in Touch</a>
-</section>
+    <section class="hero">
+        <h1>Welcome to MyAgency</h1>
+        <p>We help businesses grow with modern digital solutions.</p>
+        <a href="#contact">Get in Touch</a>
+    </section>
 
-<section class="section services" id="services">
-    <div class="service-item">
-        <h3>Web Development</h3>
-        <p>Create modern and responsive websites tailored to your needs.</p>
-    </div>
-    <div class="service-item">
-        <h3>SEO Optimization</h3>
-        <p>Improve your website’s visibility and attract more customers.</p>
-    </div>
-    <div class="service-item">
-        <h3>Digital Marketing</h3>
-        <p>Boost your online presence with targeted strategies.</p>
-    </div>
-</section>
+    <section class="section services" id="services">
+        <div class="service-item">
+            <h3>Web Development</h3>
+            <p>Create modern and responsive websites tailored to your needs.</p>
+        </div>
+        <div class="service-item">
+            <h3>SEO Optimization</h3>
+            <p>Improve your website’s visibility and attract more customers.</p>
+        </div>
+        <div class="service-item">
+            <h3>Digital Marketing</h3>
+            <p>Boost your online presence with targeted strategies.</p>
+        </div>
+    </section>
 
-<section class="section contact" id="contact">
-    <div>
-        <h2>Contact Us</h2>
-        <p>Email: contact@myagency.com</p>
-        <p>Phone: +123 456 789</p>
-    </div>
-    <form>
-        <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" required="" /><br />
-        <label for="email">Email</label><br />
-        <input type="email" id="email" name="email" required="" /><br />
-        <label for="message">Message</label><br />
-        <textarea id="message" name="message" rows="5" required=""></textarea><br />
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+    <section class="section contact" id="contact">
+        <div>
+            <h2>Contact Us</h2>
+            <p>Email: contact@myagency.com</p>
+            <p>Phone: +123 456 789</p>
+        </div>
+        <form>
+            <label for="name">Name</label><br />
+            <input type="text" id="name" name="name" required="" /><br /><br />
+            <label for="email">Email</label><br />
+            <input type="email" id="email" name="email" required="" /><br /><br />
+            <label for="message">Message</label><br />
+            <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-<footer class="footer">
-    <p>© 2025 MyAgency. All rights reserved.</p>
-</footer>
+    <footer class="footer">
+        <p>© 2025 MyAgency. All rights reserved.</p>
+    </footer>
+
 
 
 </body></html>
