@@ -9,180 +9,140 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             background-color: #f4f4f4;
             color: #333;
         }
-
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* Couleur d'arrière-plan de l'en-tête */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         header .logo {
             font-size: 1.5em;
             font-weight: bold;
-            color: #007BFF;
-            transition: transform 0.3s;
+            color: #007BFF; /* Couleur du logo */
         }
-
-        header .logo:hover {
-            transform: scale(1.1);
-        }
-
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
-            transition: color 0.3s, transform 0.3s;
+            color: #333; /* Couleur par défaut des liens */
+            transition: color 0.3s;
         }
-
         nav a:hover {
-            color: orange; /* Changement de couleur au survol */
-            transform: translateY(-2px); /* Animation de levage */
+            color: #FF5722; /* Couleur des liens au survol */
         }
-
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            background: url('https://example.com/chemin/vers/votre/image/chat.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
-
         .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            animation: fadeInUp 1s; /* Animation d'apparition */
+            color: #FFEB3B; /* Couleur du texte principal dans la section héros */
         }
-
         .hero p {
             font-size: 1.2em;
             margin-bottom: 30px;
-            animation: fadeInUp 1.2s; /* Animation d'apparition */
+            color: #ffffff; /* Couleur du texte secondaire dans la section héros */
         }
-
         .hero a {
             padding: 15px 30px;
-            background-color: #007BFF;
+            background-color: #009688; /* Couleur du bouton */
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
-            animation: fadeInUp 1.4s; /* Animation d'apparition */
         }
-
         .hero a:hover {
-            background-color: orange; /* Changement de couleur au survol */
+            background-color: #00796B; /* Couleur du bouton au survol */
         }
-
         .section {
             padding: 60px 50px;
+            background-color: #fff; /* Couleur de fond des sections */
         }
-
-        .services,
-        .contact {
+        .services, .contact {
             display: flex;
             justify-content: space-between;
         }
-
         .service-item {
             width: 30%;
-            background: #fff;
+            background: #e1f5fe; /* Couleur de fond des items de services */
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            color: #0D47A1; /* Couleur du texte des items de services */
         }
-
-        .service-item:hover {
-            transform: translateY(-5px); /* Animation de levage */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
         .footer {
             padding: 20px;
-            background: #333;
+            background: #333; /* Couleur de fond du pied de page */
             color: white;
             text-align: center;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">MyAgency</div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">MyAgency</div>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h1>Welcome to MyAgency</h1>
-        <p>We help businesses grow with modern digital solutions.</p>
-        <a href="#contact">Get in Touch</a>
-    </section>
+<section class="hero">
+    <h1>Welcome to MyAgency</h1>
+    <p>We help businesses grow with modern digital solutions.</p>
+    <a href="#contact">Get in Touch</a>
+</section>
 
-    <section class="section services" id="services">
-        <div class="service-item">
-            <h3>Web Development</h3>
-            <p>Create modern and responsive websites tailored to your needs.</p>
-        </div>
-        <div class="service-item">
-            <h3>SEO Optimization</h3>
-            <p>Improve your website’s visibility and attract more customers.</p>
-        </div>
-        <div class="service-item">
-            <h3>Digital Marketing</h3>
-            <p>Boost your online presence with targeted strategies.</p>
-        </div>
-    </section>
+<section class="section services" id="services">
+    <div class="service-item">
+        <h3>Web Development</h3>
+        <p>Create modern and responsive websites tailored to your needs.</p>
+    </div>
+    <div class="service-item">
+        <h3>SEO Optimization</h3>
+        <p>Improve your website’s visibility and attract more customers.</p>
+    </div>
+    <div class="service-item">
+        <h3>Digital Marketing</h3>
+        <p>Boost your online presence with targeted strategies.</p>
+    </div>
+</section>
 
-    <section class="section contact" id="contact">
-        <div>
-            <h2>Contact Us</h2>
-            <p>Email: contact@myagency.com</p>
-            <p>Phone: +123 456 789</p>
-        </div>
-        <form>
-            <label for="name">Name</label><br />
-            <input type="text" id="name" name="name" required="" /><br /><br />
-            <label for="email">Email</label><br />
-            <input type="email" id="email" name="email" required="" /><br /><br />
-            <label for="message">Message</label><br />
-            <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<section class="section contact" id="contact">
+    <div>
+        <h2>Contact Us</h2>
+        <p>Email: contact@myagency.com</p>
+        <p>Phone: +123 456 789</p>
+    </div>
+    <form>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required="" /><br /><br />
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required="" /><br /><br />
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-    <footer class="footer">
-        <p>© 2025 MyAgency. All rights reserved.</p>
-    </footer>
-
+<footer class="footer">
+    <p>© 2025 MyAgency. All rights reserved.</p>
+</footer>
 
 
 </body></html>
