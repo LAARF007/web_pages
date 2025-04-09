@@ -13,25 +13,25 @@
 
         /* Palette */
         :root {
-            --brown: #6F4E37;
+            --green: #4CAF50; /* Vert */
+            --light-green: #A5D6A7; /* Vert clair */
             --cream: #FFF5EB;
-            --copper: #B76E79;
         }
 
         /* Header */
-        .hero {
+        header.hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
             url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1');
             background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--cream);
+            color: var(--light-green);
         }
 
-        .hero h1 {
+        header.hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
         }
@@ -39,7 +39,12 @@
         /* Menu Section */
         .menu {
             padding: 4rem 2rem;
-            background: var(--cream);
+            background: var(--light-green);
+            text-align: center;
+        }
+
+        .menu h2 {
+            margin-bottom: 2rem;
         }
 
         .menu-grid {
@@ -54,6 +59,7 @@
             padding: 1.5rem;
             border-radius: 10px;
             transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .menu-item:hover {
@@ -63,7 +69,7 @@
         /* Story Section */
         .story {
             padding: 4rem 2rem;
-            background: var(--brown);
+            background: var(--green);
             color: var(--cream);
             text-align: center;
         }
@@ -74,15 +80,17 @@
             background-repeat: no-repeat;
             background-size: cover;
             height: 300px;
+            margin-top: 2rem;
         }
 
-        /* Reservation */
+        /* Reservation Section */
         .reservation {
             padding: 4rem 2rem;
             text-align: center;
+            background: var(--light-green);
         }
 
-        form {
+        .reservation form {
             max-width: 500px;
             margin: 2rem auto;
         }
@@ -91,21 +99,29 @@
             width: 100%;
             padding: 0.8rem;
             margin: 0.5rem 0;
-            border: 1px solid var(--brown);
+            border: 1px solid var(--green);
+            border-radius: 5px;
+            font-size: 1rem;
         }
 
         button {
-            background: var(--copper);
+            background: var(--green);
             color: white;
             padding: 1rem 2rem;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            margin-top: 1rem;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #388E3C; /* teinte plus foncée pour l'effet hover */
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
+            header.hero h1 {
                 font-size: 2.5rem;
             }
 
@@ -116,10 +132,11 @@
     </style>
 </head>
 <body>
+
 <!-- Hero Section -->
-<header class="hero element-highlight" data-element-type="HEADER">
+<header class="hero">
     <div>
-        <h1 class="" data-element-type="H1" style="font-size: 72px; color: rgb(204, 0, 0);">Brew</h1>
+        <h1>Brew&amp;Go</h1>
         <p>Artisan Coffee Since 2010</p>
     </div>
 </header>
@@ -152,14 +169,14 @@
 <section class="reservation">
     <h2>Réservation</h2>
     <form>
-        <input type="text" placeholder="Nom" />
-        <input type="email" placeholder="Email" />
-        <select>
-            <option>Nombre de personnes</option>
+        <input type="text" placeholder="Nom" required="" />
+        <input type="email" placeholder="Email" required="" />
+        <select required="">
+            <option value="" disabled="" selected="">Nombre de personnes</option>
             <option>1-2</option>
             <option>3-4</option>
         </select>
-        <button>Réserver</button>
+        <button type="submit">Réserver</button>
     </form>
 </section>
 
