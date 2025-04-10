@@ -1,184 +1,285 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brew&amp;Go - Café Artisanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet" />
+    <title>Agence Landing Page</title>
     <style>
-        /* Reset CSS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Palette */
-        :root {
-            --green: #4CAF50; /* Vert */
-            --light-green: #A5D6A7; /* Vert clair */
-            --cream: #FFF5EB;
+        body {
+            background-color: #f0f7ff;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px; /* Taille de police par défaut */
         }
 
-        /* Header */
-        header.hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1');
-            background-size: cover;
+        header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            color: white;
             text-align: center;
-            color: var(--light-green);
+            position: relative;
         }
 
-        header.hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Menu Section */
-        .menu {
-            padding: 4rem 2rem;
-            background: var(--light-green);
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero a {
+            padding: 15px 30px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s, transform 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero a:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 60px 20px; /* Changement de padding pour plus d'uniformité */
+            max-width: 1200px; /* Ajout d'une largeur max pour le contenu */
+            margin: 0 auto;
+        }
+
+        h2 {
             text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em; /* Taille de police pour les titres */
         }
 
-        .menu h2 {
-            margin-bottom: 2rem;
+        .services,
+        .portfolio,
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .menu-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
+        .service-item,
+        .portfolio-item {
+            flex-basis: calc(33% - 20px);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            margin: 10px;
             transition: transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .menu-item:hover {
+        .service-item:hover,
+        .portfolio-item:hover {
             transform: translateY(-5px);
         }
 
-        /* Story Section */
-        .story {
-            padding: 4rem 2rem;
-            background: var(--green);
-            color: var(--cream);
+        .contact {
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 300px;
-            margin-top: 2rem;
-        }
-
-        /* Reservation Section */
-        .reservation {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: var(--light-green);
-        }
-
-        .reservation form {
-            max-width: 500px;
-            margin: 2rem auto;
-        }
-
-        input, select {
+        form {
             width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: 1px solid var(--green);
-            border-radius: 5px;
-            font-size: 1rem;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
         }
 
         button {
-            background: var(--green);
+            padding: 15px 30px;
+            background-color: #007BFF;
             color: white;
-            padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         button:hover {
-            background: #388E3C; /* teinte plus foncée pour l'effet hover */
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
-        /* Responsive */
+        .footer {
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
-            header.hero h1 {
-                font-size: 2.5rem;
+            .service-item,
+            .portfolio-item {
+                flex-basis: calc(50% - 20px);
+                margin: 10px 0; /* Uniformisation des marges */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-item,
+            .portfolio-item {
+                flex-basis: 100%;
             }
 
-            .menu-grid {
-                grid-template-columns: 1fr;
+            .section {
+                padding: 40px 10px; /* Réduction de l'espacement pour mobile */
             }
         }
     </style>
 </head>
+
 <body>
 
-<!-- Hero Section -->
-<header class="hero">
-    <div>
-        <h1>Brew&amp;Go</h1>
-        <p>Artisan Coffee Since 2010</p>
-    </div>
-</header>
+    <header>
+        <div class="logo">Adel</div>
+        <nav class="" data-element-type="NAV">
+            <a href="services" class="" data-element-type="A">Services</a>
+            <a href="#portfolio" class="element-highlight" data-element-type="A">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<!-- Menu -->
-<section class="menu">
-    <h2>Notre Carte</h2>
-    <div class="menu-grid">
-        <div class="menu-item">
-            <h3>Café Filtre</h3>
-            <p>Origine Colombie - 120cal</p>
-            <p>4.50€</p>
+    <section class="hero element-highlight" data-element-type="SECTION">
+        <h1 class="" data-element-type="H1">Welcome to My Agency</h1>
+        <p>We help businesses grow with modern digital solutions.</p>
+        <a href="#contact" class="element-highlight" data-element-type="A">Get in Touch</a>
+    </section>
+
+    <section class="section services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <h3>Web Development</h3>
+            <p>Create modern and responsive websites tailored to your needs.</p>
         </div>
-        <div class="menu-item">
-            <h3>Croissant Artisanal</h3>
-            <p>Beurre AOP - 240cal</p>
-            <p>3.80€</p>
+        <div class="service-item">
+            <h3>SEO Optimization</h3>
+            <p>Improve your website’s visibility and attract more customers.</p>
         </div>
-    </div>
-</section>
+        <div class="service-item">
+            <h3>Digital Marketing</h3>
+            <p>Boost your online presence with targeted strategies.</p>
+        </div>
+        <div class="service-item">
+            <h3>Graphic Design</h3>
+            <p>Design stunning visuals that capture your brand’s essence.</p>
+        </div>
+    </section>
 
-<!-- Story -->
-<section class="story">
-    <h2>Notre Histoire</h2>
-    <p>Depuis 2010, nous torréfions nos grains avec passion...</p>
-    <div class="parallax" style="background-image: url('https://images.unsplash.com/photo-1463797221720-6b07e6426c24')"></div>
-</section>
+    <section class="section portfolio" id="portfolio">
+        <h2>Our Portfolio</h2>
+        <p>Explore some of our recent projects that showcase our capabilities and creativity.</p>
+        <div class="portfolio-item">
+            <h3>Project One</h3>
+            <p>A modern e-commerce site designed for easy navigation and user experience.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Project Two</h3>
+            <p>A sleek portfolio website for a photographer highlighting their best works.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Project Three</h3>
+            <p>A dynamic blog template that adapts to various content types effectively.</p>
+        </div>
+    </section>
 
-<!-- Reservation -->
-<section class="reservation">
-    <h2>Réservation</h2>
-    <form>
-        <input type="text" placeholder="Nom" required="" />
-        <input type="email" placeholder="Email" required="" />
-        <select required="">
-            <option value="" disabled="" selected="">Nombre de personnes</option>
-            <option>1-2</option>
-            <option>3-4</option>
-        </select>
-        <button type="submit">Réserver</button>
-    </form>
-</section>
+    <section class="section contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@myagency.com</p>
+        <p>Phone: +123 456 789</p>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required="" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required="" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required=""></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 MyAgency. All rights reserved.</p>
+    </footer>
 
 
 </body></html>
