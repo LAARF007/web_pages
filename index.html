@@ -50,7 +50,7 @@
             margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.3em;
+            font-size: 1.2em;
             margin-bottom: 30px;
         }
         .hero a {
@@ -85,68 +85,6 @@
             color: white;
             text-align: center;
         }
-        
-        /* Contact Section Styles */
-        .contact {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .contact h2 {
-            margin-bottom: 20px;
-        }
-        .contact-info {
-            margin-bottom: 40px;
-        }
-        .contact-info p {
-            margin: 10px 0;
-        }
-        .contact-info span {
-            font-weight: bold;
-        }
-        form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        button[type="submit"] {
-            padding: 10px;
-            background-color: #007BFF;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        @media(max-width: 768px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-            .service-item {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -161,7 +99,7 @@
 </header>
 
 <section class="hero">
-    <h1>Welcome to MyAgency</h1>
+    <h1 class="element-highlight" data-element-type="H1">testo to MyAgency</h1>
     <p>We help businesses grow with modern digital solutions.</p>
     <a href="#contact">Get in Touch</a>
 </section>
@@ -182,21 +120,18 @@
 </section>
 
 <section class="section contact" id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-        <p><span>Email:</span> <a href="mailto:contact@myagency.com">contact@myagency.com</a></p>
-        <p><span>Phone:</span> +123 456 789</p>
+    <div>
+        <h2>Contact Us</h2>
+        <p>Email: contact@myagency.com</p>
+        <p>Phone: +123 456 789</p>
     </div>
     <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required="" class="element-highlight" data-element-type="INPUT" />
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required="" />
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required=""></textarea>
-        
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required="" /><br /><br />
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required="" /><br /><br />
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
         <button type="submit">Send Message</button>
     </form>
 </section>
@@ -204,6 +139,7 @@
 <footer class="footer">
     <p>© 2025 MyAgency. All rights reserved.</p>
 </footer>
+
 
 
 </body></html>
