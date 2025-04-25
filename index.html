@@ -1,146 +1,123 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agence Landing Page</title>
+    <title>TechSphere - SaaS Innovant</title>
     <style>
-
+        /* Reset + Variables */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
-        body {
-            background: linear-gradient(to right, #f4f4f4, #eaeaea);
-            color: #333;
+
+        :root {
+            --blue: #2563eb;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            --dark: #1e293b;
         }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: linear-gradient(to right, #007BFF, #0056b3);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        header .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #fff;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ddd;
-        }
+
+        /* Hero */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to bottom, rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            padding: 8rem 2rem;
+            background: var(--gradient);
             color: white;
             text-align: center;
         }
+
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
         }
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
+
+        /* Features Grid */
+        .features {
+            padding: 4rem 2rem;
+            background: #f8fafc;
         }
-        .hero a {
-            padding: 15px 30px;
-            background: linear-gradient(to right, #007BFF, #0056b3);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .hero a:hover {
-            background: linear-gradient(to right, #0056b3, #007BFF);
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .section {
-            padding: 60px 50px;
-            background: linear-gradient(to right, #fff, #f7f7f7);
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
         }
-        .services, .contact {
-            display: flex;
-            justify-content: space-between;
-        }
-        .service-item {
-            width: 30%;
-            background: linear-gradient(to bottom, #ffffff, #f9f9f9);
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+
+        /* Pricing */
+        .pricing {
+            padding: 4rem 2rem;
             text-align: center;
         }
-        .footer {
-            padding: 20px;
-            background: linear-gradient(to right, #333, #444);
-            color: white;
-            text-align: center;
+
+        .price-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem;
+        }
+
+        .price-card h3 {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">MyAgency</div>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero element-highlight" data-element-type="SECTION">
-    <h1 class="element-highlight" data-element-type="H1">Welcome to MyAgency</h1>
-    <p>We help businesses grow with modern digital solutions.</p>
-    <a href="#contact">Get in Touch</a>
+<!-- Hero -->
+<section class="hero">
+    <h1>Révolutionnez votre workflow</h1>
+    <p>Solution tout-en-un pour les équipes modernes</p>
 </section>
 
-<section class="section services" id="services">
-    <div class="service-item">
-        <h3>Web Development</h3>
-        <p>Create modern and responsive websites tailored to your needs.</p>
-    </div>
-    <div class="service-item">
-        <h3>SEO Optimization</h3>
-        <p>Improve your website’s visibility and attract more customers.</p>
-    </div>
-    <div class="service-item">
-        <h3>Digital Marketing</h3>
-        <p>Boost your online presence with targeted strategies.</p>
+<!-- Features -->
+<section class="features">
+    <div class="grid">
+        <div class="card">
+            <h3>Automatisation IA</h3>
+            <p>Tâches répétitives gérées par notre intelligence artificielle</p>
+        </div>
+        <div class="card">
+            <h3>Analytics Temps Réel</h3>
+            <p>Tableaux de bord personnalisables avec données en direct</p>
+        </div>
     </div>
 </section>
 
-<section class="section contact" id="contact">
-    <div>
-        <h2>Contact Us</h2>
-        <p>Email: contact@myagency.com</p>
-        <p>Phone: +123 456 789</p>
+<!-- Pricing -->
+<section class="pricing">
+    <h2>Tarifs</h2>
+    <div class="grid">
+        <div class="price-card">
+            <h3>29€</h3>
+            <p>/mois</p>
+            <ul>
+                <li>5 utilisateurs</li>
+                <li>20GB de stockage</li>
+            </ul>
+        </div>
     </div>
-    <form>
-        <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" required="" /><br /><br />
-        <label for="email">Email</label><br />
-        <input type="email" id="email" name="email" required="" /><br /><br />
-        <label for="message">Message</label><br />
-        <textarea id="message" name="message" rows="5" required=""></textarea><br /><br />
-        <button type="submit">Send Message</button>
-    </form>
 </section>
-
-<footer class="footer">
-    <p>© 2025 MyAgency. All rights reserved.</p>
-</footer>
 
 
 </body></html>
